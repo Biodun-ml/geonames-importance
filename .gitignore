@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# GeoNames dumps and outputs
+/data/
+*.zip
+*.parquet
+allCountries.txt
+alternateNamesV2.txt
+overrides.csv

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "geonames-importance"
+version = "0.1.0"
+description = "Score GeoNames places by importance, in bounded memory"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Samuel Aguda" }]
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.2", "pyarrow>=18"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+geonames-importance = "geonames_importance.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/geonames_importance"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
